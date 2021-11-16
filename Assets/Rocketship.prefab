@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4601991700051039493}
   - component: {fileID: 1186089979086600308}
+  - component: {fileID: 945494247}
+  - component: {fileID: 945494249}
   m_Layer: 0
   m_Name: Rocketship
   m_TagString: Untagged
@@ -46,7 +48,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23d651e8c852ab54f8a3cb3d941e276c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.91
   m_Pitch: 0.8
   Loop: 0
@@ -131,6 +133,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &945494247
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394619920755676997}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.25
+  m_AngularDrag: 0.1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 56
+  m_CollisionDetection: 0
+--- !u!114 &945494249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394619920755676997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09d8cf1135a9824da671585daf414a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rcsThrust: 250
+  mainThrust: 50
 --- !u!1001 &3362931080868080038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,6 +300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3797764375299614287, guid: 30113ea4f24d2ce44acf6a2cfbcfcf04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 872ca936634bc62408ea74c806f83ef9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30113ea4f24d2ce44acf6a2cfbcfcf04, type: 3}
 --- !u!4 &1836870468425915974 stripped
@@ -342,6 +378,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3797764375299614287, guid: 30113ea4f24d2ce44acf6a2cfbcfcf04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 872ca936634bc62408ea74c806f83ef9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30113ea4f24d2ce44acf6a2cfbcfcf04, type: 3}
 --- !u!4 &8055731754434243713 stripped
@@ -404,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nose
       objectReference: {fileID: 0}
+    - target: {fileID: 8941689506091279365, guid: 3aa5174a45ee7b24ea64a3f2f16d9e31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3111fae8af3f0674d9009def55a38f57, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aa5174a45ee7b24ea64a3f2f16d9e31, type: 3}
 --- !u!4 &5613414337934790813 stripped
