@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Level1.unity
+    path: Assets/Easy one.unity
     guid: f1fbd7f2a64036040903f7b614f08e5b
   - enabled: 1
-    path: Assets/Level2.unity
+    path: Assets/Find the gap.unity
+    guid: 0cecbadd8e6199b479d437862ff7e7ee
+  - enabled: 1
+    path: Assets/The dark room.unity
     guid: 750f03791f7e4294ab725637798c95ad
+  - enabled: 1
+    path: Assets/Purple cover.unity
+    guid: 3d22c0b6839e6264c86abd4504a3afc2
+  - enabled: 1
+    path: Assets/Impossible.unity
+    guid: f88af25a8e3e9f44cb7ad4864ecd28a2
   m_configObjects: {}

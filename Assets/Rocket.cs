@@ -23,6 +23,8 @@ public class Rocket : MonoBehaviour
     AudioSource audioSource;
     enum State{ Alive, Dying, Transcending}
     State state = State.Alive;
+
+    bool collisionsDisabled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +41,25 @@ public class Rocket : MonoBehaviour
        RespondToThrustInput();
        RespondToRotateInput();
         }
+        if(Debug.isDebugBuild)
+        {
+        RespondToDebugKeys();
+        }
+    }
+    void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+collisionsDisabled=!collisionsDisabled;
+        }
     }
 void OnCollisionEnter(Collision collision)
 {
-    if (state != State.Alive)
+    if (state != State.Alive || collisionsDisabled)
     {
         return;
     }
@@ -82,16 +99,28 @@ void StartDeathSequence()
   audioSource.PlayOneShot(death);
   deathParticles.Play();
   Invoke("LoadFirstLevel", levelLoadDelay);
+ 
 }
 
 void LoadNextLevel()
 {
-        SceneManager.LoadScene(1);
+    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+   // print(currentSceneIndex);
+    int nextSceneIndex = currentSceneIndex+1;
+    if(nextSceneIndex== SceneManager.sceneCountInBuildSettings)
+      {
+ nextSceneIndex=0;
+
+      }
+
+      SceneManager.LoadScene(nextSceneIndex);
 
 }
 void LoadFirstLevel()
 {
-        SceneManager.LoadScene(0);
+     int scene = SceneManager.GetActiveScene().buildIndex;
+         SceneManager.LoadScene(scene, LoadSceneMode.Single);
+//SceneManager.LoadScene(0);
 
 }
     void RespondToThrustInput()
